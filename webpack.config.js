@@ -12,29 +12,30 @@ var config = {
     module: {
         loaders: [
             {
+                test: /[\/]angular\.js$/,
+                loader: "exports?angular"
+            },{
                 test: /\.js$/,
                 loader: 'babel',
                 exclude: /node_modules/
-            },
-            {
+            },{
                 test: /\.css$/,
                 loader: 'style!css',
                 exclude: /node_modules/
-            },
-            {
+            },{
                 test: /\.scss$/,
                 loader: 'style!css!sass',
                 exclude: /node_modules/
+            },{
+                test: /\.png$/,
+                loader: "url-loader?limit=100000&mimetype=image/png"
             },
             {
-                test: /\.(png|jpg)$/,
-                loader: 'url?limit=25000',
-                exclude: /node_modules/
-            },
-            {
+                test: /\.jpg$/,
+                loader: "file-loader"
+            },{
                 test: /\.html$/,
-                loader: 'raw',
-                exclude: /node_modules/
+                loader: "html-loader"
             }
         ]
     },
@@ -45,7 +46,12 @@ var config = {
             name: 'vendor',
             filename: 'vendor.bundle.js'
         })
-    ]
+    ],
+    resolve: {
+        extensions: ['', '.js', '.json', '.less'],
+        // Tell webpack to look for required files in bower and node
+        modulesDirectories: ['node_modules']
+    }
 };
 
 module.exports = config;
