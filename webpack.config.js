@@ -1,32 +1,51 @@
-var Webpack = require('webpack');
-var path = require('path');
-var appPath = path.resolve(__dirname, 'app');
-var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'public', 'build');
+var webpack = require('webpack');
 
 var config = {
-    context: __dirname,
-    devtool: 'eval-source-map',
-    entry: [
-        'webpack-dev-server/client?http://localhost:9000',
-        'webpack/hot/dev-server',
-        path.resolve(appPath, 'main.js')],
+    entry: {
+        app: './app/index.js',
+        vendor: ['angular', 'oclazyload']
+    },
     output: {
-        path: buildPath,
-        filename: 'bundle.js',
-        publicPath: '/build/'
+        path: './build',
+        filename: 'bundle.js'
     },
     module: {
-        loaders: [{
-            test: /\.js$/,
-            loader: 'babel',
-            exclude: [nodeModulesPath]
-        }, {
-            test: /\.css$/,
-            loader: 'style!css'
-        }]
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                loader: 'style!css',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                loader: 'style!css!sass',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.(png|jpg)$/,
+                loader: 'url?limit=25000',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.html$/,
+                loader: 'raw',
+                exclude: /node_modules/
+            }
+        ]
     },
-    plugins: [new Webpack.HotModuleReplacementPlugin()]
+
+    plugins: [
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: 'vendor.bundle.js'
+        })
+    ]
 };
 
 module.exports = config;
