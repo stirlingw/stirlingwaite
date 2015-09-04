@@ -1,4 +1,4 @@
 export default Angular => {
-    const ngHomeModule = Angular.module('homeApp', []);
+    const ngHomeModule = Angular.module('HomeApp', []);
     require('./HomeCtrl')(ngHomeModule);
 }

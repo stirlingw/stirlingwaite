@@ -8,10 +8,10 @@ require('./states/blog/BlogModule')(Angular);
 require('./states/blogs/BlogsModule')(Angular);
 
 
-const ngModule = Angular.module('myApp', [require('angular-ui-router'), 'oc.lazyLoad', 'homeApp', 'aboutApp', 'contactApp', 'blogApp', 'blogsApp']);
+const ngModule = Angular.module('myApp', [require('angular-ui-router'), 'oc.lazyLoad', 'HomeApp', 'AboutApp', 'ContactApp', 'BlogApp', 'BlogsApp']);
 
 require('./config')(ngModule, Angular);
-require('./shared/services/superModel')(ngModule, Angular);
+require('./shared/services/SuperModel')(ngModule, Angular);
 require('./components/BlogPosts/BlogPostsDirective')(ngModule, Angular);
 
 // Navigation Scripts to Show Header on Scroll-Up
