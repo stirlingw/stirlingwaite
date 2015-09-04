@@ -7,7 +7,6 @@ export default (ngModule, Angular) => {
             scope: true,
             replace: true,
             templateUrl: './components/BlogPosts/BlogPostsView.html',
-            //template: '<div>hi</div>',
             link: function (scope, element, attrs) {
                 scope.foundBlogs = SuperModelService.getBlogs();
             }

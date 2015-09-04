@@ -7,21 +7,12 @@ export default (ngModule, Angular) => {
         var foundBlogs = [
             {
                 id: 0,
-                date: '2015-08-05',
-                title: 'It was a dark',
-                subTitle: 'and stormy knight!',
-                name: "stormy-knight",
-                file: 'stormy-knight.md',
-                img: 'stormy-knight.jpg'
-            },
-            {
-                id: 1,
-                date: '2015-08-07',
-                title: 'Stirling Is Awesome',
-                subTitle: 'Really awesome!',
-                name: "stirling-awesome",
-                file: 'stirling-awesome.md',
-                img: 'stirling-awesome.jpg'
+                date: '2015-09-03',
+                title: 'Marked Down With Marked, Angular, and Webpack Loaders',
+                subTitle: '',
+                name: "marked-down-with-marked",
+                file: 'marked-down-with-marked.md',
+                img: 'marked-down-with-marked.jpg'
             }
         ];
 
