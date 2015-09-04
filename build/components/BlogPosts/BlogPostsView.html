@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div ng-repeat="fb in foundBlogs">
+                <div class="post-preview">
+                    <a href="#!/blogs/{{fb.name}}">
+                        <h2 class="post-title">
+                            {{fb.title}}
+                        </h2>
+                        <h3 class="post-subtitle">
+                            {{fb.subTitle}}
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Stirling</a> on {{fb.date}}</p>
+                </div>
+                <hr>
+            </div>
+            <!-- Pager -->
+            <ul class="pager">
+                <li class="next">
+                    <a href="#">Older Posts &rarr;</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
