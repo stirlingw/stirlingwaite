@@ -4,20 +4,7 @@ export default (ngModule, Angular) => {
 
         $urlRouterProvider.otherwise('home');
 
-        $stateProvider.state('home', {
-            url: '/home',
-            templateProvider: ['$q', function($q) {
-                var deferred = $q.defer();
-                require.ensure(['./states/home/homeView.html'], function() {
-                    var template = require('./states/home/homeView.html');
-                    deferred.resolve(template);
-                });
-                return deferred.promise;
-            }],
-            controller: 'HomeCtrl',
-            controllerAs: 'test'
-        })
-        .state('about', {
+        $stateProvider.state('about', {
             url: '/about',
             templateProvider: ['$q', function($q) {
                 var deferred = $q.defer();
@@ -67,6 +54,19 @@ export default (ngModule, Angular) => {
                 return deferred.promise;
             }],
             controller: 'ContactCtrl',
+            controllerAs: 'test'
+        })
+        .state('home', {
+            url: '/home',
+            templateProvider: ['$q', function($q) {
+                var deferred = $q.defer();
+                require.ensure(['./states/home/homeView.html'], function() {
+                    var template = require('./states/home/homeView.html');
+                    deferred.resolve(template);
+                });
+                return deferred.promise;
+            }],
+            controller: 'HomeCtrl',
             controllerAs: 'test'
         });
     }]);

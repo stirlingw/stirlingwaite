@@ -1,5 +1,7 @@
-let homeCtrl = function(){};
+let homeCtrl = function(){
+
+};
 
 export default ngModule => {
-    ngModule.controller('HomeCtrl', homeCtrl);
+    ngModule.controller('HomeCtrl', function(){ });
 }
