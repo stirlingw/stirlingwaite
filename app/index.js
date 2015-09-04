@@ -1,11 +1,11 @@
 const Angular = require('angular');
 require('oclazyload');
 
-require('./states/home/homeModule')(Angular);
-require('./states/about/aboutModule')(Angular);
-require('./states/contact/contactModule')(Angular);
-require('./states/blog/blogModule')(Angular);
-require('./states/blogs/blogsModule')(Angular);
+require('./states/home/HomeModule')(Angular);
+require('./states/about/AboutModule')(Angular);
+require('./states/contact/ContactModule')(Angular);
+require('./states/blog/BlogModule')(Angular);
+require('./states/blogs/BlogsModule')(Angular);
 
 
 const ngModule = Angular.module('myApp', [require('angular-ui-router'), 'oc.lazyLoad', 'homeApp', 'aboutApp', 'contactApp', 'blogApp', 'blogsApp']);
