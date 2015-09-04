@@ -1,8 +1,4 @@
-let blogCtrl = function(){
-
-
-
-};
+let blogCtrl = function(){ };
 
 export default ngModule => {
     ngModule.controller('BlogCtrl', blogCtrl);

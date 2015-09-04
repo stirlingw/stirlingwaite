@@ -7,8 +7,6 @@ export default ngModule => {
 
             $scope.blog = SuperModelService.getBlog($state.params.name);
 
-            //console.log($scope.blog);
-
             if($scope.blog !== undefined) {
                 marked.setOptions({
                     renderer: new marked.Renderer(),

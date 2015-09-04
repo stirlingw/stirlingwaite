@@ -1,6 +1,5 @@
 export default (ngModule, Angular) => {
     ngModule.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function($stateProvider, $locationProvider, $urlRouterProvider) {
-        //$locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
 
         $urlRouterProvider.otherwise('home');
