@@ -8,8 +8,8 @@ export default (ngModule, Angular) => {
             url: '/home',
             templateProvider: ['$q', function($q) {
                 var deferred = $q.defer();
-                require.ensure(['./states/home/homeView.html'], function() {
-                    var template = require('./states/home/homeView.html');
+                require.ensure(['./states/home/HomeView.html'], function() {
+                    var template = require('./states/home/HomeView.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
@@ -21,8 +21,8 @@ export default (ngModule, Angular) => {
             url: '/about',
             templateProvider: ['$q', function($q) {
                 var deferred = $q.defer();
-                require.ensure(['./states/about/aboutView.html'], function() {
-                    var template = require('./states/about/aboutView.html');
+                require.ensure(['./states/about/AboutView.html'], function() {
+                    var template = require('./states/about/AboutView.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
@@ -34,8 +34,8 @@ export default (ngModule, Angular) => {
             url: '/blog',
             templateProvider: ['$q', function($q) {
                 var deferred = $q.defer();
-                require.ensure(['./states/blog/blogView.html'], function() {
-                    var template = require('./states/blog/blogView.html');
+                require.ensure(['./states/blog/BlogView.html'], function() {
+                    var template = require('./states/blog/BlogView.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
@@ -47,8 +47,8 @@ export default (ngModule, Angular) => {
             url: '/blogs/:name',
             templateProvider: ['$q', function($q) {
                 var deferred = $q.defer();
-                require.ensure(['./states/blogs/blogsView.html'], function() {
-                    var template = require('./states/blogs/blogsView.html');
+                require.ensure(['./states/blogs/BlogsView.html'], function() {
+                    var template = require('./states/blogs/BlogsView.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
@@ -60,8 +60,8 @@ export default (ngModule, Angular) => {
             url: '/contact',
             templateProvider: ['$q', function($q) {
                 var deferred = $q.defer();
-                require.ensure(['./states/contact/contactView.html'], function() {
-                    var template = require('./states/contact/contactView.html');
+                require.ensure(['./states/contact/ContactView.html'], function() {
+                    var template = require('./states/contact/ContactView.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
