@@ -12,9 +12,6 @@ var config = {
     module: {
         loaders: [
             {
-                test: /[\/]angular\.js$/,
-                loader: "exports?angular"
-            },{
                 test: /\.js$/,
                 loader: 'babel',
                 exclude: /node_modules/
@@ -35,6 +32,7 @@ var config = {
                 loader: "file-loader"
             },{
                 test: /\.html$/,
+                exclude: /node_modules/,
                 loader: "html-loader"
             }
         ]

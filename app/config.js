@@ -9,65 +9,66 @@ export default (ngModule, Angular) => {
             url: '/home',
             templateProvider: ['$q', function($q) {
                 var deferred = $q.defer();
-                require.ensure(['./states/home/HomeView.html'], function() {
-                    var template = require('./states/home/HomeView.html');
+                require.ensure(['./states/home/homeView.html'], function() {
+                    var template = require('./states/home/homeView.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
             }],
             controller: 'HomeCtrl',
             controllerAs: 'test'
-        })/*.state('page2', {
-            url: '/page2',
+        })
+        .state('about', {
+            url: '/about',
             templateProvider: ['$q', function($q) {
                 var deferred = $q.defer();
-                require.ensure(['./page2.html'], function() {
-                    var template = require('./page2.html');
+                require.ensure(['./states/about/aboutView.html'], function() {
+                    var template = require('./states/about/aboutView.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
             }],
-            controller: function(){
-                this.title = 'This is page 2';
-            },
+            controller: 'AboutCtrl',
             controllerAs: 'test'
-        }).state('page3', {
-            url: '/page3',
+        })
+        .state('blog', {
+            url: '/blog',
             templateProvider: ['$q', function($q) {
                 var deferred = $q.defer();
-                require.ensure(['./page3.html'], function() {
-                    var template = require('./page3.html');
+                require.ensure(['./states/blog/blogView.html'], function() {
+                    var template = require('./states/blog/blogView.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
             }],
-            controller: 'Page3Controller',
+            controller: 'BlogCtrl',
             controllerAs: 'test'
-        }).state('page4', {
-            url: '/page4',
+        })
+        .state('blogs', {
+            url: '/blogs/:name',
             templateProvider: ['$q', function($q) {
-                let deferred = $q.defer();
-                require.ensure(['./page4.html'], function() {
-                    var template = require('./page4.html');
+                var deferred = $q.defer();
+                require.ensure(['./states/blogs/blogsView.html'], function() {
+                    var template = require('./states/blogs/blogsView.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
             }],
-            controller: 'Page4Controller',
-            controllerAs: 'test',
-            resolve: ['$q', '$ocLazyLoad', function($q, $ocLazyLoad) {
+            controller: 'BlogsCtrl',
+            controllerAs: 'test'
+        })
+        .state('contact', {
+            url: '/contact',
+            templateProvider: ['$q', function($q) {
                 var deferred = $q.defer();
-
-                require.ensure(['./page4Module.js'], function() {
-                    var module = require('./page4Module.js')(Angular);
-                    $ocLazyLoad.load({
-                        name: 'page4App'
-                    });
-                    deferred.resolve(module);
+                require.ensure(['./states/contact/contactView.html'], function() {
+                    var template = require('./states/contact/contactView.html');
+                    deferred.resolve(template);
                 });
-
                 return deferred.promise;
-            }]
-        })*/;
+            }],
+            controller: 'ContactCtrl',
+            controllerAs: 'test'
+        });
     }]);
 }

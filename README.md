@@ -25,3 +25,9 @@ Build production with minification
 ```
 npm run deploy
 ```
+
+Run Node
+
+```
+node server.js
+```
