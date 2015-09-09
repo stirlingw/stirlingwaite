@@ -129,4 +129,3 @@ With Webpack you can add the raw-loader, and require the loader in directly
 var fileContent = require("raw!./md/" + $scope.blog.file);
 
 We also added marked [https://www.npmjs.com/package/marked](https://www.npmjs.com/package/marked) and required it in with var marked = require('marked');
-

@@ -1,4 +1,3 @@
-
 export default (ngModule, Angular) => {
     ngModule.directive('blogPostsDirective', ['$http', 'SuperModelService', function ($http, SuperModelService) {
         'use strict';
@@ -6,7 +5,7 @@ export default (ngModule, Angular) => {
             restrict: 'EA',
             scope: true,
             replace: true,
-            templateUrl: './components/BlogPosts/BlogPostsView.html',
+            templateUrl: './components/BlogPosts/blogPostsView.html',
             link: function (scope, element, attrs) {
                 scope.foundBlogs = SuperModelService.getBlogs();
             }

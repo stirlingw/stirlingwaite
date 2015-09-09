@@ -1,17 +1,13 @@
 const Angular = require('angular');
+
 require('oclazyload');
 
-require('./states/about/aboutModule')(Angular);
-require('./states/blog/blogModule')(Angular);
-require('./states/blogs/blogsModule')(Angular);
-require('./states/contact/contactModule')(Angular);
-require('./states/home/homeModule')(Angular);
+const ngModule = Angular.module('myApp', [require('angular-ui-router'), 'oc.lazyLoad']);
 
-const ngModule = Angular.module('myApp', [require('angular-ui-router'), 'oc.lazyLoad','aboutApp', 'blogApp', 'blogsApp', 'contactApp', 'homeApp' ]);
 
-require('./config')(ngModule, Angular);
 require('./shared/services/superModel')(ngModule, Angular);
 require('./components/BlogPosts/BlogPostsDirective')(ngModule, Angular);
+require('./config')(ngModule, Angular);
 
 // Navigation Scripts to Show Header on Scroll-Up
 jQuery(document).ready(function($) {

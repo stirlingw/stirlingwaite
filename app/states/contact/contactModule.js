@@ -1,4 +1,5 @@
 export default Angular => {
     const ngContactModule = Angular.module('contactApp', []);
-    require('./ContactCtrl')(ngContactModule);
+
+    require('./contactCtrl.js')(ngContactModule);
 }

@@ -15,29 +15,29 @@ var config = {
                 test: /\.js$/,
                 loader: 'babel',
                 exclude: /node_modules/
-            },{
+            },
+            {
                 test: /\.css$/,
                 loader: 'style!css',
                 exclude: /node_modules/
-            },{
+            },
+            {
                 test: /\.scss$/,
                 loader: 'style!css!sass',
                 exclude: /node_modules/
-            },{
-                test: /\.png$/,
-                loader: "url-loader?limit=100000&mimetype=image/png"
             },
             {
-                test: /\.jpg$/,
-                loader: "file-loader"
-            },{
+                test: /\.(png|jpg)$/,
+                loader: 'url?limit=25000',
+                exclude: /node_modules/
+            },
+            {
                 test: /\.html$/,
-                exclude: /node_modules/,
-                loader: "html-loader"
+                loader: 'raw',
+                exclude: /node_modules/
             }
         ]
     },
-
     plugins: [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.CommonsChunkPlugin({

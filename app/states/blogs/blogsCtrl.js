@@ -1,4 +1,3 @@
-
 var marked = require('marked');
 
 export default ngModule => {

@@ -1,4 +1,5 @@
 export default Angular => {
     const ngBlogsModule = Angular.module('blogsApp', []);
-    require('./BlogsCtrl')(ngBlogsModule);
+
+    require('./blogsCtrl.js')(ngBlogsModule);
 }

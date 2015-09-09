@@ -1,5 +1,7 @@
-let contactCtrl = function(){};
+let contactCtrl = function(){
+    
+};
 
 export default ngModule => {
-    ngModule.controller('ContactCtrl', function(){ });
+    ngModule.controller('ContactCtrl', contactCtrl);
 }

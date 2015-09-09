@@ -36,22 +36,23 @@ var config = {
                 test: /\.html$/,
                 loader: 'raw',
                 exclude: /node_modules/
-            },{
-                test: /\.gif/,
-                    exclude: /node_modules/,
-                    loader: "file-loader!url-loader?limit=10000&minetype=image/gif"
-            },{
-                test: /\.jpg/,
-                    exclude: /node_modules/,
-                    loader: "file-loader!url-loader?limit=10000&minetype=image/jpg"
-            },{
-                test: /\.png/,
-                    exclude: /node_modules/,
-                    loader: "file-loader!url-loader?limit=10000&minetype=image/png"
             }
         ]
     },
-
+     // Put paths to files in here which are already packaged for production, such as vendor
+    // libs that have been minimized already. This is going to bypass any checks on our end
+    noParse: [
+        /\.min\.js/,
+        /[\/\\]angular\.js$/,
+        /[\/\\]angular-ui-router\.js$/,
+        /[\/\\]ui-bootstrap-tpls\.js$/
+    ],
+    externals: {
+        angular: 'angular',
+        lodash: '_',
+        angularUiRouter: 'angular-ui-router',
+        marked: 'marked'
+    },
     plugins: [
         //new ngAnnotatePlugin({
         //    add: true
